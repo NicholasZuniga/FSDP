@@ -97,7 +97,7 @@ namespace FSDP.DATA.EF
         [Display(Name ="Client Name")]
         public string ClientName
         {
-            get { return FirstName + " " + LastName}
+            get { return FirstName + " " + LastName; }
         }
     }
 
@@ -114,7 +114,7 @@ namespace FSDP.DATA.EF
         [StringLength(50,ErrorMessage ="* Material cannot be longer than 50 characters")]
         public string VaseMaterial { get; set; }
 
-        [Display(Name ='Owner ID')]
+        [Display(Name ="Owner ID")]
         public string OwnerId { get; set; }
 
         [Display(Name ="Vase Photo")]
