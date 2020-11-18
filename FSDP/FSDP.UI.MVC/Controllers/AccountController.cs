@@ -1,4 +1,5 @@
-﻿using FSDP.UI.MVC.Models;
+﻿using FSDP.DATA.EF;
+using FSDP.UI.MVC.Models;
 using Microsoft.AspNet.Identity;
 using Microsoft.AspNet.Identity.Owin;
 using Microsoft.Owin.Security;
@@ -151,8 +152,21 @@ namespace FSDP.UI.MVC.Controllers
             {
                 var user = new ApplicationUser { UserName = model.Email, Email = model.Email };
                 var result = await UserManager.CreateAsync(user, model.Password);
+                UserManager.AddToRole(user.Id, "Client");
                 if (result.Succeeded)
                 {
+                    #region Dealing with custom user details
+                    OwnerDetail newUserdeets = new OwnerDetail();
+                    newUserdeets.OwnerId = user.Id;
+                    newUserdeets.FirstName = model.FirstName;
+                    newUserdeets.LastName = model.LastName;
+                    
+
+                    FSDPEntities db = new FSDPEntities();
+                    db.OwnerDetails.Add(newUserdeets);
+                    db.SaveChanges();
+                    #endregion
+
                     var code = await UserManager.GenerateEmailConfirmationTokenAsync(user.Id);
                     var callbackUrl = Url.Action("ConfirmEmail", "Account", new { userId = user.Id, code = code }, protocol: Request.Url.Scheme);
                     await UserManager.SendEmailAsync(user.Id, "Confirm your account", "Please confirm your account by clicking this link: <a href=\"" + callbackUrl + "\">link</a>");
