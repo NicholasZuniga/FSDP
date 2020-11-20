@@ -2,231 +2,874 @@
     ViewBag.Title = "Home Page";
 }
 
-<div class="jumbotron">
-    <h1>ASP.NET Identity</h1>
-    <p class="lead">ASP.NET Identity is the membership system for ASP.NET apps. Following are the features of ASP.NET Identity in this sample application.</p>
-    <p><a href="http://www.asp.net/identity" class="btn btn-primary btn-large">Learn more &raquo;</a></p>
-</div>
+<!-- Header -->
+<header id="headerwrap" class="fullheight">
+    <div class="container">
+        <div class="intro-text">
+            <div class="intro-lead-in wow bounceInDown" data-wow-delay="0.5s">We Can Help You <span class="wodry">Create|Design|Profit</span></div>
+            <div class="intro-heading wow bounceInUp" data-wow-delay="1s">SMASHCO <span class="thin">N.Y.C.</span></div>
+            <a href="#about-us" class="page-scroll btn btn-xl btn-negative  wow bounceInDown" data-wow-delay="2s">Tell Me More <i class="fa fa-angle-down fa-2x"></i></a>
+        </div>
+    </div>
+</header>
 
-<div class="row">
-    <div class="col-md-4">
-        <dl>
-            <dt>Initialize ASP.NET Identity</dt>
-            <dd>
-                You can initialize ASP.NET Identity when the application starts. Since ASP.NET Identity is Entity Framework based in this sample,
-                you can create DatabaseInitializer which is configured to get called each time the app starts.
-                <strong>Please look in App_Start\IdentityConfig.cs</strong>
-                This code shows the following
-                <ul>
-                    <li>When should the Initializer run and when should the database be created</li>
-                    <li>Create Admin user</li>
-                    <li>Create Admin role</li>
-                    <li>Add Admin user to Admin role</li>
-                </ul>
-            </dd>
-        </dl>
+<!-- About Section -->
+<section id="about-us">
+    <div class="section-inner">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-12 text-center wow fadeInDown">
+                    <h2 class="section-heading"><strong>About</strong> Us</h2>
+                    <h3 class="section-subheading text-muted">Lorem ipsum dolor sit amet consectetur.</h3>
+                </div>
+            </div>
+            <div class="row gap">
+                <div class="col-md-4 wow fadeInLeft">
+                    <img src="~/Content/assets/img/devices_responsive.png" class="img-responsive" />
+                </div>
+                <div class="col-md-8 wow fadeInRight">
+                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Minima maxime quam architecto quo inventore harum ex magni, dicta impedit. Lorem ipsum dolor sit amet, consectetur adipisicing elit. Minima maxime quam architecto quo inventore harum ex magni, dicta impedit. Lorem ipsum dolor sit amet, consectetur adipisicing elit. Minima maxime quam architecto quo inventore harum ex magni, dicta impedit.</p>
+                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Minima maxime quam architecto quo inventore harum ex magni, dicta impedit. Lorem ipsum dolor sit amet, consectetur adipisicing elit. Minima maxime quam architecto quo inventore harum ex magni, dicta impedit. Lorem ipsum dolor sit amet, consectetur adipisicing elit. Minima maxime quam architecto quo inventore harum ex magni, dicta impedit.</p>
+                </div>
+            </div>
+        </div>
     </div>
-    <div class="col-md-4">
-        <dl>
-            <dt>Add profile data for the user</dt>
-            <dd>
-                <a href="http://blogs.msdn.com/b/webdev/archive/2013/10/16/customizing-profile-information-in-asp-net-identity-in-vs-2013-templates.aspx">Please follow this tutorial.</a>
+</section>
 
-                <ul>
-                    <li>Add profile information in the Users Table</li>
-                    <li>Look in Models\IdentityModels.cs for examples</li>
-                </ul>
-            </dd>
-        </dl>
+<!-- Team Section -->
+<section id="team" class="divider-wrapper opaqued" data-parallax="scroll" data-image-src="/Content/assets/img/bg/bg2.jpg" data-speed="0.7">
+    <div class="section-inner">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-12 text-center wow fadeInDown">
+                    <h2 class="section-heading"><strong>Amazing</strong> Team</h2>
+                    <h3 class="section-subheading text-muted">Lorem ipsum dolor sit amet consectetur.</h3>
+                </div>
+            </div>
+            <div class="row wow fadeInUp">
+                <div class="col-md-3">
+                    <div class="team-member">
+                        <div class="team-card">
+                            <img src="~/Content/assets/img/team/team1.jpg" class="img-responsive" alt="">
+                            <ul class="list-inline social-buttons">
+                                <li>
+                                    <a class="twitter" href="#"><i class="fa fa-twitter"></i></a>
+                                </li>
+                                <li>
+                                    <a class="facebook" href="#"><i class="fa fa-facebook"></i></a>
+                                </li>
+                                <li>
+                                    <a class="google" href="#"><i class="fa fa-google-plus"></i></a>
+                                </li>
+                                <li>
+                                    <a class="linkedin" href="#"><i class="fa fa-linkedin"></i></a>
+                                </li>
+                            </ul>
+                        </div>
+                        <h4>Kirk Johnson</h4>
+                        <p class="text-muted">CEO</p>
+                    </div>
+                </div>
+                <div class="col-md-3">
+                    <div class="team-member">
+                        <div class="team-card">
+                            <img src="~/Content/assets/img/team/team2.jpg" class="img-responsive" alt="">
+                            <ul class="list-inline social-buttons">
+                                <li>
+                                    <a class="twitter" href="#"><i class="fa fa-twitter"></i></a>
+                                </li>
+                                <li>
+                                    <a class="facebook" href="#"><i class="fa fa-facebook"></i></a>
+                                </li>
+                                <li>
+                                    <a class="google" href="#"><i class="fa fa-google-plus"></i></a>
+                                </li>
+                                <li>
+                                    <a class="linkedin" href="#"><i class="fa fa-linkedin"></i></a>
+                                </li>
+                            </ul>
+                        </div>
+                        <h4>Craig Roberts</h4>
+                        <p class="text-muted">Lead Marketing</p>
+                    </div>
+                </div>
+                <div class="col-md-3">
+                    <div class="team-member">
+                        <div class="team-card">
+                            <img src="~/Content/assets/img/team/team3.jpg" class="img-responsive" alt="">
+                            <ul class="list-inline social-buttons">
+                                <li>
+                                    <a class="twitter" href="#"><i class="fa fa-twitter"></i></a>
+                                </li>
+                                <li>
+                                    <a class="facebook" href="#"><i class="fa fa-facebook"></i></a>
+                                </li>
+                                <li>
+                                    <a class="google" href="#"><i class="fa fa-google-plus"></i></a>
+                                </li>
+                                <li>
+                                    <a class="linkedin" href="#"><i class="fa fa-linkedin"></i></a>
+                                </li>
+                            </ul>
+                        </div>
+                        <h4>Lowri Jones</h4>
+                        <p class="text-muted">Sales</p>
+                    </div>
+                </div>
+                <div class="col-md-3">
+                    <div class="team-member">
+                        <div class="team-card">
+                            <img src="~/Content/assets/img/team/team4.jpg" class="img-responsive" alt="">
+                            <ul class="list-inline social-buttons">
+                                <li>
+                                    <a class="twitter" href="#"><i class="fa fa-twitter"></i></a>
+                                </li>
+                                <li>
+                                    <a class="facebook" href="#"><i class="fa fa-facebook"></i></a>
+                                </li>
+                                <li>
+                                    <a class="google" href="#"><i class="fa fa-google-plus"></i></a>
+                                </li>
+                                <li>
+                                    <a class="linkedin" href="#"><i class="fa fa-linkedin"></i></a>
+                                </li>
+                            </ul>
+                        </div>
+                        <h4>David Spencer</h4>
+                        <p class="text-muted">Warehouse</p>
+                    </div>
+                </div>
+            </div>
+        </div>
     </div>
-    <div class="col-md-4">
-        <dl>
-            <dt>Validation</dt>
-            <dd>
-                When you create a User using a username or password, the Identity system performs validation on the username and password, and the passwords are hashed before they are
-                stored in the database. You can customize the validation by changing some of the properties of the validators such as Turn alphanumeric on/off, set minimum password length
-                or you can write your own custom validators and register them with the UserManager.
-            </dd>
-        </dl>
-    </div>
-    <div class="col-md-4">
-        <dl>
-            <dt>Register a user and login</dt>
-            <dd>
-                Click @Html.ActionLink("Register", "Register", "Account") and see the code in AccountController.cs and Register Action.
-                Click @Html.ActionLink("Log in", "Login", "Account") and see the code in AccountController.cs and Login Action.
-            </dd>
-        </dl>
-    </div>
-    <div class="col-md-4">
-        <dl>
-            <dt>Social Logins</dt>
-            <dd>
-                You can the support so that users can login using their Facebook, Google, Twitter, Microsoft Account and more.
-            </dd>
-            <dd>
-                <ul>
-                    <li>
-                        <a href="http://www.windowsazure.com/en-us/documentation/articles/web-sites-dotnet-deploy-aspnet-mvc-app-membership-oauth-sql-database/">Add Social Logins</a>
-                    </li>
-                    <li>
-                        <a href="http://blogs.msdn.com/b/webdev/archive/2013/10/16/get-more-information-from-social-providers-used-in-the-vs-2013-project-templates.aspx">Get more data about the user when they login suing Facebook</a>
-                    </li>
-                </ul>
-            </dd>
-        </dl>
-    </div>
-    <div class="col-md-4">
-        <dl>
-            <dt>Basic User Management</dt>
-            <dd>
-                Do Create, Update, List and Delete Users.
-                Assign a Role to a User.
-                Only Users In Role Admin can access this page. This uses the [Authorize(Roles = "Admin")] on the UserAdmin controller.
-            </dd>
-        </dl>
-    </div>
-    <div class="col-md-4">
-        <dl>
-            <dt>Basic Role Management</dt>
-            <dd>
-                Do Create, Update, List and Delete Roles.
-                Only Users In Role Admin can access this page. This authorization is doen by using the [Authorize(Roles = "Admin")] on the RolesAdmin controller.
-            </dd>
-        </dl>
-    </div>
-    <div class="col-md-4">
-        <dl>
-            <dt>Account Confirmation</dt>
-            <dd>
-                When you register a new account, you will be sent an email confirmation.
-                You can use an email service such as <a href="http://www.windowsazure.com/en-us/documentation/articles/sendgrid-dotnet-how-to-send-email/">SendGrid</a> which integrate nicely with Windows Azure and requires no configuration or
-                set up an SMTP server to send email.
-                You can send email using the EmailService which is registered in App_Start\IdentityConfig.cs
-            </dd>
-        </dl>
-    </div>
-    <div class="col-md-4">
-        <dl>
-            <dt>Two-Factor Authentication</dt>
-            <dd>
-                This sample shows how you can use Two-Factor authentication. This sample has a SMS and email service registered where you can send SMS or email for sending the security code.
-                You can add more two-factor authentication factors such as QR codes and plug them into ASP.NET Identity.
-                <ul>
-                    <li>
-                        You can use a SMS using <a href="https://www.twilio.com/">Twilio</a> or use any means of sending SMS. Please <a href="https://www.twilio.com/docs/quickstart/csharp/sms/sending-via-rest">read</a> for more details on using Twilio.
-                        You can send SMS using the SmsService which is registered in App_Start\IdentityConfig.cs
-                    </li>
-                    <li>
-                        You can use an email service such as <a href="http://www.windowsazure.com/en-us/documentation/articles/sendgrid-dotnet-how-to-send-email/">SendGrid</a> or
-                        set up an SMTP server to send email.
-                        You can send email using the EmailService which is registered in App_Start\IdentityConfig.cs
-                    </li>
+</section>
 
-                    <li>
-                        When you login, you can add a phone number by clicking the Manage page.
-                    </li>
-                    <li>
-                        Once you add a phone number and have the Phone service hooked to send a SMS, you will get a code through SMS to confirm your phone number.
-                    </li>
-                    <li>
-                        In the Manage page, you can turn on Two-Factor authentication.
-                    </li>
-                    <li>
-                        When you logout and login, after you enter the username and password, you will get an option of how to get the security code to use for two-factor authentication.
-                    </li>
-                    <li>
-                        You can copy the code from your SMS or email and enter in the form to login.
-                    </li>
-                    <li>
-                        The sample also shows how to protect against Brute force attacks against two-factor codes. When you enter a code incorrectly for 5 times then you will be
-                        lockedout for 5 min before you can enter a new code. These settings can be configured in App_Start\IdentityConfig.cs by setting  DefaultAccountLockoutTimeSpan and MaxFailedAccessAttemptsBeforeLockout on the UserManager.
-                    </li>
-                    <li>
-                        If the machine you are browsing this website is your own machine, you can choose to check the "Remember Me" option after you enter the code.
-                        This option will remember you forever on this machine and will not ask you for the two-factor authentication, the next time when you login to the website.
-                        You can change your "Remember Me" settings for two-factor authentication in the Manage page.
-                    </li>
-                </ul>
-            </dd>
-        </dl>
+<!-- Services Section -->
+<section id="services">
+    <div class="section-inner">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-12 text-center wow fadeInDown">
+                    <h2 class="section-heading"><strong>Our</strong> Services</h2>
+                    <h3 class="section-subheading text-muted">Lorem ipsum dolor sit amet consectetur.</h3>
+                </div>
+            </div>
+            <div class="row wow fadeInUp">
+                <div class="col-md-4 service-item">
+                    <div class="row">
+                        <div class="col-md-2 col-sm-2 col-xs-2 service-icon">
+                            <i class="pe-7s-video fa-4x"></i>
+                        </div>
+                        <div class="col-md-10 col-sm-10 col-xs-10 pull-right">
+                            <h4 class="service-heading">Video Editing</h4>
+                            <p class="text-muted">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Minima maxime quam architecto quo inventore harum ex magni, dicta impedit. Lorem ipsum dolor sit amet, consectetur adipisicing elit. Minima maxime quam architecto quo inventore harum ex magni, dicta impedit.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4 service-item">
+                    <div class="row">
+                        <div class="col-md-2 col-sm-2 col-xs-2 service-icon">
+                            <i class="pe-7s-phone fa-4x"></i>
+                        </div>
+                        <div class="col-md-10 col-sm-10 col-xs-10 pull-right">
+                            <h4 class="service-heading">App Development</h4>
+                            <p class="text-muted">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Minima maxime quam architecto quo inventore harum ex magni, dicta impedit. Lorem ipsum dolor sit amet, consectetur adipisicing elit. Minima maxime quam architecto quo inventore harum ex magni, dicta impedit.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4 service-item">
+                    <div class="row">
+                        <div class="col-md-2 col-sm-2 col-xs-2 service-icon">
+                            <i class="pe-7s-tools fa-4x"></i>
+                        </div>
+                        <div class="col-md-10 col-sm-10 col-xs-10 pull-right">
+                            <h4 class="service-heading">E-Commerce</h4>
+                            <p class="text-muted">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Minima maxime quam architecto quo inventore harum ex magni, dicta impedit. Lorem ipsum dolor sit amet, consectetur adipisicing elit. Minima maxime quam architecto quo inventore harum ex magni, dicta impedit.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
     </div>
-    <div class="col-md-4">
-        <dl>
-            <dt>Account Lockout</dt>
-            <dd>
-                Provide a way to Lockout out the user if the user enters their password or two-factor codes incorrectly.
-                The number of invalid attempts and the timespan for the users are locked out can be configured.
-                A developer can optionally turn off Account Lockout for certain user accounts should they need to.
-            </dd>
-            <ul>
-                <li>Account LockOut settings can be configured in the UserManager in IdentityConfig.cs</li>
-            </ul>
-        </dl>
+</section>
+
+<section id="stats" class="divider-wrapper opaqued" data-parallax="scroll" data-image-src="/Content/assets/img/bg/bg4.jpg" data-speed="0.7">
+    <div class="section-inner">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-3 col-xs-12">
+                    <div class="text-center">
+                        <span class="stat-icon"><i class="pe-7s-timer fa-4x"></i></span>
+                        <h2><span class="countup">10248</span></h2>
+                        <h6>Hours Saved</h6>
+                    </div>
+                </div>
+                <div class="col-md-3 col-xs-12">
+                    <div class="text-center">
+                        <span class="stat-icon"><i class="pe-7s-cloud-upload fa-4x"></i></span>
+                        <h2><span class="countup">2035945</span></h2>
+                        <h6>Files Uploaded</h6>
+                    </div>
+                </div>
+                <div class="col-md-3 col-xs-12">
+                    <div class="text-center">
+                        <span class="stat-icon"><i class="pe-7s-tools fa-4x"></i></span>
+                        <h2><span class="countup">24</span></h2>
+                        <h6>Hours Of Support</h6>
+                    </div>
+                </div>
+                <div class="col-md-3 col-xs-12">
+                    <div class="text-center">
+                        <span class="stat-icon"><i class="pe-7s-like fa-4x"></i></span>
+                        <h2><span class="countup">99999999</span></h2>
+                        <h6>Social Shares</h6>
+                    </div>
+                </div>
+            </div>
+        </div>
     </div>
-    <div class="col-md-4">
-        <dl>
-            <dt>Security Token provider</dt>
-            <dd>
-                Support a way to regenerate the Security Token for the user in cases when the User changes there password or any other security related information such as removing an associated login(such as Facebook, Google, Microsoft Account etc).
-                This is needed to ensure that any tokens generated with the old password are invalidated. In the sample project, if you change the users password then a new token is generated for the user and any previous tokens are invalidated.
-                This feature provides an extra layer of security to your application since when you change your password, you will be logged out from everywhere (all other browsers) where you have logged into this application.
-            </dd>
-            <dd>
-                <ul>
-                    <li>The provider is registered when you add CookieAuthentication in StartupAuth to your application.</li>
-                </ul>
-            </dd>
-        </dl>
-    </div>
-    <div class="col-md-4">
-        <dl>
-            <dt>Password Reset</dt>
-            <dd>
-                Allows the user to reset their passwords if they have forgotten their password. In this sample users need to confirm their email before they can reset their passwords.
-            </dd>
-        </dl>
-    </div>
-    <div class="col-md-4">
-        <dl>
-            <dt>Custom Storage providers</dt>
-            <dd>
-                You can extend ASP.NET Identity to write your own custom storage provider for storing the ASP.NET Identity system and user data
-                in a persistance system of your choice such as MondoDb, RavenDb, Azure Table Storage etc.
-            </dd>
-            <dd>
-                <ul>
-                    <li>
-                        <a href="http://www.asp.net/identity/overview/extensibility/overview-of-custom-storage-providers-for-aspnet-identity">
-                            learn more on how to implement your own storage provider
+</section>
+
+<section id="filterable-portfolio">
+    <div class="section-inner">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-12 text-center wow fadeInDown">
+                    <h2 class="section-heading"><strong>Filter</strong> Portfolio</h2>
+                    <h3 class="section-subheading text-muted">Lorem ipsum dolor sit amet consectetur.</h3>
+                </div>
+            </div>
+            <div class="row wow fadeInUp">
+                <ul class="portfolio-filter gap text-center list-inline wow fadeInDown">
+                    <li><a class="btn btn-outlined btn-primary active" href="#" data-filter="*">All</a></li>
+                    <li><a class="btn btn-outlined btn-primary" href="#" data-filter=".apps">Apps</a></li>
+                    <li><a class="btn btn-outlined btn-primary" href="#" data-filter=".design">Design</a></li>
+                    <li><a class="btn btn-outlined btn-primary" href="#" data-filter=".photography">Photography</a></li>
+                    <li><a class="btn btn-outlined btn-primary" href="#" data-filter=".video">Video</a></li>
+                </ul><!--/#portfolio-filter-->
+
+                <ul class="portfolio-items col-3 isotope direction-aware">
+                    <li class="col-md-4 portfolio-item da-item apps isotope-item">
+                        <a class="lb-link" href="~/Content/assets/img/portfolio/portfolio1.jpg" title="View Image">
+                            <img src="~/Content/assets/img/portfolio/portfolio1.jpg" class="img-responsive" alt="">
+                            <div>
+                                <div class="portfolio-hover-content">
+                                    <i class="pe-7s-close fa-3x"></i>
+                                </div>
+                            </div>
+                        </a>
+                    </li>
+                    <li class="col-md-4 portfolio-item da-item design isotope-item">
+                        <a class="lb-link" href="~/Content/assets/img/portfolio/portfolio2.jpg" title="View Image">
+                            <img src="~/Content/assets/img/portfolio/portfolio2.jpg" class="img-responsive" alt="">
+                            <div>
+                                <div class="portfolio-hover-content">
+                                    <i class="pe-7s-close fa-3x"></i>
+                                </div>
+                            </div>
+                        </a>
+                    </li>
+                    <li class="col-md-4 portfolio-item da-item photography isotope-item">
+                        <a class="lb-link" href="~/Content/assets/img/portfolio/portfolio3.jpg" title="View Image">
+                            <img src="~/Content/assets/img/portfolio/portfolio4.jpg" class="img-responsive" alt="">
+                            <div>
+                                <div class="portfolio-hover-content">
+                                    <i class="pe-7s-close fa-3x"></i>
+                                </div>
+                            </div>
+                        </a>
+                    </li>
+                    <li class="col-md-4 portfolio-item da-item video isotope-item">
+                        <a class="lb-link" href="~/Content/assets/img/portfolio/portfolio5.jpg" title="View Image">
+                            <img src="~/Content/assets/img/portfolio/portfolio6.jpg" class="img-responsive" alt="">
+                            <div>
+                                <div class="portfolio-hover-content">
+                                    <i class="pe-7s-close fa-3x"></i>
+                                </div>
+                            </div>
+                        </a>
+                    </li>
+                    <li class="col-md-4 portfolio-item da-item design isotope-item">
+                        <a class="lb-link" href="~/Content/assets/img/portfolio/portfolio7.jpg" title="View Image">
+                            <img src="~/Content/assets/img/portfolio/portfolio7.jpg" class="img-responsive" alt="">
+                            <div>
+                                <div class="portfolio-hover-content">
+                                    <i class="pe-7s-close fa-3x"></i>
+                                </div>
+                            </div>
+                        </a>
+                    </li>
+                    <li class="col-md-4 portfolio-item da-item photography isotope-item">
+                        <a class="lb-link" href="~/Content/assets/img/portfolio/portfolio8.jpg" title="View Image">
+                            <img src="~/Content/assets/img/portfolio/portfolio8.jpg" class="img-responsive" alt="">
+                            <div>
+                                <div class="portfolio-hover-content">
+                                    <i class="pe-7s-close fa-3x"></i>
+                                </div>
+                            </div>
+                        </a>
+                    </li>
+                    <li class="col-md-4 portfolio-item da-item video isotope-item">
+                        <a class="lb-link" href="~/Content/assets/img/portfolio/portfolio9.jpg" title="View Image">
+                            <img src="~/Content/assets/img/portfolio/portfolio9.jpg" class="img-responsive" alt="">
+                            <div>
+                                <div class="portfolio-hover-content">
+                                    <i class="pe-7s-close fa-3x"></i>
+                                </div>
+                            </div>
+                        </a>
+                    </li>
+                    <li class="col-md-4 portfolio-item da-item design isotope-item">
+                        <a class="lb-link" href="~/Content/assets/img/portfolio/portfolio10.jpg" title="View Image">
+                            <img src="~/Content/assets/img/portfolio/portfolio10.jpg" class="img-responsive" alt="">
+                            <div>
+                                <div class="portfolio-hover-content">
+                                    <i class="pe-7s-close fa-3x"></i>
+                                </div>
+                            </div>
+                        </a>
+                    </li>
+                    <li class="col-md-4 portfolio-item da-item video isotope-item">
+                        <a class="lb-link" href="~/Content/assets/img/portfolio/portfolio11.jpg" title="View Image">
+                            <img src="~/Content/assets/img/portfolio/portfolio11.jpg" class="img-responsive" alt="">
+                            <div>
+                                <div class="portfolio-hover-content">
+                                    <i class="pe-7s-close fa-3x"></i>
+                                </div>
+                            </div>
                         </a>
                     </li>
                 </ul>
-            </dd>
-        </dl>
+            </div>
+        </div>
     </div>
-    <div class="col-md-4">
-        <dl>
-            <dt>Documentation</dt>
-            <dd>
-                <ul>
-                    <li>
-                        Tutorials: <a href="www.asp.net/identity">www.asp.net/identity</a>
+</section>
+
+<section id="statistics" class="divider-wrapper opaqued" data-parallax="scroll" data-image-src="/Content/assets/img/bg/bg5.jpg" data-speed="0.7">
+    <div class="section-inner">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-6">
+                    <div class="row">
+                        <div class="col-md-4">
+                            <div class="stat-circle" data-dimension="175" data-text="7.5" data-info="" data-width="30" data-fontsize="38" data-percent="75" data-fgcolor="#fff" data-bgcolor="transparent" data-fill="transparent" data-total="100" data-part="75" data-icon="long-arrow-up" data-icon-size="28" data-icon-color="#fff" data-animation-step="1"></div>
+                        </div>
+                        <div class="col-md-8">
+                            <h3><strong>HTML5</strong> Skill</h3>
+                            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Sunt ut voluptatum eius sapiente. Lorem ipsum dolor sit amet, consectetur adipisicing elit. Sunt ut voluptatum eius sapiente.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-6">
+                    <div class="row">
+                        <div class="col-md-8">
+                            <h3><strong>Web</strong> Design</h3>
+                            <p>Sunt ut voluptatum eius sapiente. Lorem ipsum dolor sit amet, consectetur adipisicing elit. Sunt ut voluptatum eius sapiente. Lorem ipsum dolor sit amet, consectetur adipisicing elit.</p>
+                        </div>
+                        <div class="col-md-4">
+                            <div class="stat-circle" data-dimension="175" data-text="9.0" data-info="" data-width="30" data-fontsize="38" data-percent="90" data-fgcolor="#fff" data-bgcolor="transparent" data-fill="transparent" data-total="100" data-part="90" data-icon="long-arrow-up" data-icon-size="28" data-icon-color="#fff" data-animation-step="1"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section>
+    <div class="section-inner">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-12 text-center wow fadeInDown">
+                    <h2 class="section-heading"><strong>Latest</strong> Blogs</h2>
+                    <h3 class="section-subheading text-muted">Lorem ipsum dolor sit amet consectetur.</h3>
+                </div>
+            </div>
+            <div class="row">
+                <ul class="direction-aware">
+                    <li class="col-md-4 portfolio-item da-item wow fadeInUp" data-mh="blog-posts">
+                        <a href="#" title="View Post">
+                            <img src="~/Content/assets/img/blog/blog1.jpg" class="img-responsive" alt="">
+                            <div>
+                                <div class="portfolio-hover-content">
+                                    <i class="pe-7s-close fa-3x"></i>
+                                </div>
+                            </div>
+                        </a>
+                        <div class="item-caption">
+                            <h4>Travelling The Globe</h4>
+                            <ul class="list-inline post-meta-list">
+                                <li><p class="text-muted"><i class="pe-7s-folder"></i> <a href="#" title="">Travel</a></p></li>
+                                <li><p class="text-muted"><i class="pe-7s-clock"></i> <a href="#" title="">10/12/2014</a></p></li>
+                                <li><p class="text-muted"><i class="pe-7s-user"></i> <a href="#" title="">Richard Blake</a></p></li>
+                            </ul>
+                            <p class="post-excerpt">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Sunt ut voluptatum eius sapiente. Lorem ipsum dolor sit amet, consectetur adipisicing elit. Sunt ut voluptatum eius sapiente</p>
+                            <a class="btn btn-primary mt20 pull-right" href="single-post.html">Read More</a>
+                        </div>
                     </li>
-                    <li>
-                        StackOverflow: <a href="http://stackoverflow.com/questions/tagged/asp.net-identity">http://stackoverflow.com/questions/tagged/asp.net-identity</a>
+                    <li class="col-md-4 portfolio-item da-item wow fadeInUp" data-mh="blog-posts">
+                        <a href="#" title="View Image">
+                            <img src="~/Content/assets/img/blog/blog2.jpg" class="img-responsive" alt="">
+                            <div>
+                                <div class="portfolio-hover-content">
+                                    <i class="pe-7s-close fa-3x"></i>
+                                </div>
+                            </div>
+                        </a>
+                        <div class="item-caption">
+                            <h4>This Band Rock</h4>
+                            <ul class="list-inline post-meta-list">
+                                <li><p class="text-muted"><i class="pe-7s-folder"></i> Music</p></li>
+                                <li><p class="text-muted"><i class="pe-7s-clock"></i> <a href="#" title="">10/12/2014</a></p></li>
+                                <li><p class="text-muted"><i class="pe-7s-user"></i> <a href="#" title="">Richard Blake</a></p></li>
+                            </ul>
+                            <p class="post-excerpt">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Sunt ut voluptatum eius sapiente. Lorem ipsum dolor sit amet, consectetur adipisicing elit. Sunt ut voluptatum eius sapiente</p>
+                            <a class="btn btn-primary mt20 pull-right" href="single-post.html">Read More</a>
+                        </div>
                     </li>
-                    <li>
-                        Twitter: #identity #aspnet
+                    <li class="col-md-4 portfolio-item da-item wow fadeInUp" data-mh="blog-posts">
+                        <a href="#" title="View Post">
+                            <img src="~/Content/assets/img/blog/blog3.jpg" class="img-responsive" alt="">
+                            <div>
+                                <div class="portfolio-hover-content">
+                                    <i class="pe-7s-close fa-3x"></i>
+                                </div>
+                            </div>
+                        </a>
+                        <div class="item-caption">
+                            <h4>Treasure Chest</h4>
+                            <ul class="list-inline post-meta-list">
+                                <li><p class="text-muted"><i class="pe-7s-folder"></i> News</p></li>
+                                <li><p class="text-muted"><i class="pe-7s-clock"></i> <a href="#" title="">10/12/2014</a></p></li>
+                                <li><p class="text-muted"><i class="pe-7s-user"></i> <a href="#" title="">Richard Blake</a></p></li>
+                            </ul>
+                            <p class="post-excerpt">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Sunt ut voluptatum eius sapiente. Lorem ipsum dolor sit amet, consectetur adipisicing elit. Sunt ut voluptatum eius sapiente</p>
+                            <a class="btn btn-primary mt20 pull-right" href="single-post.html">Read More</a>
+                        </div>
                     </li>
-                    <li>
-                        <a href="http://curah.microsoft.com/55636/aspnet-identity">ASP.NET Identity on curah</a>
+                    <li class="col-md-4 portfolio-item da-item wow fadeInUp" data-mh="blog-posts">
+                        <a href="#" title="View Post">
+                            <img src="~/Content/assets/img/blog/blog4.jpg" class="img-responsive" alt="">
+                            <div>
+                                <div class="portfolio-hover-content">
+                                    <i class="pe-7s-close fa-3x"></i>
+                                </div>
+                            </div>
+                        </a>
+                        <div class="item-caption">
+                            <h4>New York Night</h4>
+                            <ul class="list-inline post-meta-list">
+                                <li><p class="text-muted"><i class="pe-7s-folder"></i> News</p></li>
+                                <li><p class="text-muted"><i class="pe-7s-clock"></i> <a href="#" title="">10/12/2014</a></p></li>
+                                <li><p class="text-muted"><i class="pe-7s-user"></i> <a href="#" title="">Richard Blake</a></p></li>
+                            </ul>
+                            <p class="post-excerpt">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Sunt ut voluptatum eius sapiente. Lorem ipsum dolor sit amet, consectetur adipisicing elit. Sunt ut voluptatum eius sapiente</p>
+                            <a class="btn btn-primary mt20 pull-right" href="single-post.html">Read More</a>
+                        </div>
                     </li>
-                    <li>
-                        Have bugs or suggestions for ASP.NET Identity <a href="http://aspnetidentity.codeplex.com/">http://aspnetidentity.codeplex.com/</a>
+                    <li class="col-md-4 portfolio-item da-item wow fadeInUp" data-mh="blog-posts">
+                        <a href="#" title="View Post">
+                            <img src="~/Content/assets/img/blog/blog5.jpg" class="img-responsive" alt="">
+                            <div>
+                                <div class="portfolio-hover-content">
+                                    <i class="pe-7s-close fa-3x"></i>
+                                </div>
+                            </div>
+                        </a>
+                        <div class="item-caption">
+                            <h4>Hot Gossip</h4>
+                            <ul class="list-inline post-meta-list">
+                                <li><p class="text-muted"><i class="pe-7s-folder"></i> News</p></li>
+                                <li><p class="text-muted"><i class="pe-7s-clock"></i> <a href="#" title="">10/12/2014</a></p></li>
+                                <li><p class="text-muted"><i class="pe-7s-user"></i> <a href="#" title="">Richard Blake</a></p></li>
+                            </ul>
+                            <p class="post-excerpt">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Sunt ut voluptatum eius sapiente. Lorem ipsum dolor sit amet, consectetur adipisicing elit. Sunt ut voluptatum eius sapiente</p>
+                            <a class="btn btn-primary mt20 pull-right" href="single-post.html">Read More</a>
+                        </div>
+                    </li>
+                    <li class="col-md-4 portfolio-item da-item wow fadeInUp" data-mh="blog-posts">
+                        <a href="#" title="View Post">
+                            <img src="~/Content/assets/img/blog/blog6.jpg" class="img-responsive" alt="">
+                            <div>
+                                <div class="portfolio-hover-content">
+                                    <i class="pe-7s-close fa-3x"></i>
+                                </div>
+                            </div>
+                        </a>
+                        <div class="item-caption">
+                            <h4>Where Are They Now?</h4>
+                            <ul class="list-inline post-meta-list">
+                                <li><p class="text-muted"><i class="pe-7s-folder"></i> News</p></li>
+                                <li><p class="text-muted"><i class="pe-7s-clock"></i> <a href="#" title="">10/12/2014</a></p></li>
+                                <li><p class="text-muted"><i class="pe-7s-user"></i> <a href="#" title="">Richard Blake</a></p></li>
+                            </ul>
+                            <p class="post-excerpt">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Sunt ut voluptatum eius sapiente. Lorem ipsum dolor sit amet, consectetur adipisicing elit. Sunt ut voluptatum eius sapiente</p>
+                            <a class="btn btn-primary mt20 pull-right" href="single-post.html">Read More</a>
+                        </div>
+                    </li>
+                    <li class="col-md-4 portfolio-item da-item wow fadeInUp" data-mh="blog-posts">
+                        <a href="#" title="View Post">
+                            <img src="~/Content/assets/img/blog/blog7.jpg" class="img-responsive" alt="">
+                            <div>
+                                <div class="portfolio-hover-content">
+                                    <i class="pe-7s-close fa-3x"></i>
+                                </div>
+                            </div>
+                        </a>
+                        <div class="item-caption">
+                            <h4>A Day Off</h4>
+                            <ul class="list-inline post-meta-list">
+                                <li><p class="text-muted"><i class="pe-7s-folder"></i> News</p></li>
+                                <li><p class="text-muted"><i class="pe-7s-clock"></i> <a href="#" title="">10/12/2014</a></p></li>
+                                <li><p class="text-muted"><i class="pe-7s-user"></i> <a href="#" title="">Richard Blake</a></p></li>
+                            </ul>
+                            <p class="post-excerpt">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Sunt ut voluptatum eius sapiente. Lorem ipsum dolor sit amet, consectetur adipisicing elit. Sunt ut voluptatum eius sapiente</p>
+                            <a class="btn btn-primary mt20 pull-right" href="single-post.html">Read More</a>
+                        </div>
+                    </li>
+                    <li class="col-md-4 portfolio-item da-item wow fadeInUp" data-mh="blog-posts">
+                        <a href="#" title="View Post">
+                            <img src="~/Content/assets/img/blog/blog8.jpg" class="img-responsive" alt="">
+                            <div>
+                                <div class="portfolio-hover-content">
+                                    <i class="pe-7s-close fa-3x"></i>
+                                </div>
+                            </div>
+                        </a>
+                        <div class="item-caption">
+                            <h4>Annual Vacation Choices</h4>
+                            <ul class="list-inline post-meta-list">
+                                <li><p class="text-muted"><i class="pe-7s-folder"></i> News</p></li>
+                                <li><p class="text-muted"><i class="pe-7s-clock"></i> <a href="#" title="">10/12/2014</a></p></li>
+                                <li><p class="text-muted"><i class="pe-7s-user"></i> <a href="#" title="">Richard Blake</a></p></li>
+                            </ul>
+                            <p class="post-excerpt">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Sunt ut voluptatum eius sapiente. Lorem ipsum dolor sit amet, consectetur adipisicing elit. Sunt ut voluptatum eius sapiente</p>
+                            <a class="btn btn-primary mt20 pull-right" href="single-post.html">Read More</a>
+                        </div>
+                    </li>
+                    <li class="col-md-4 portfolio-item da-item wow fadeInUp" data-mh="blog-posts">
+                        <a href="#" title="View Post">
+                            <img src="~/Content/assets/img/blog/blog9.jpg" class="img-responsive" alt="">
+                            <div>
+                                <div class="portfolio-hover-content">
+                                    <i class="pe-7s-close fa-3x"></i>
+                                </div>
+                            </div>
+                        </a>
+                        <div class="item-caption">
+                            <h4>Dreams - What Do They Mean?</h4>
+                            <ul class="list-inline post-meta-list">
+                                <li><p class="text-muted"><i class="pe-7s-folder"></i> News</p></li>
+                                <li><p class="text-muted"><i class="pe-7s-clock"></i> <a href="#" title="">10/12/2014</a></p></li>
+                                <li><p class="text-muted"><i class="pe-7s-user"></i> <a href="#" title="">Richard Blake</a></p></li>
+                            </ul>
+                            <p class="post-excerpt">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Sunt ut voluptatum eius sapiente. Lorem ipsum dolor sit amet, consectetur adipisicing elit. Sunt ut voluptatum eius sapiente</p>
+                            <a class="btn btn-primary mt20 pull-right" href="single-post.html">Read More</a>
+                        </div>
                     </li>
                 </ul>
-            </dd>
-        </dl>
+            </div>
+        </div>
     </div>
-</div>
+</section>
+
+<section id="testimonies" class="divider-wrapper opaqued" data-parallax="scroll" data-image-src="/Content/assets/img/bg/bg2.jpg" data-speed="0.7">
+    <div class="section-inner">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-12 text-center wow fadeInDown">
+                    <h2 class="section-heading"><strong>Client</strong> Testimonies</h2>
+                    <h3 class="section-subheading text-muted">Lorem ipsum dolor sit amet consectetur.</h3>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-xs-10 col-xs-offset-1">
+                    <ul class="direction-aware owl-carousel wow fadeInUp" data-items="1" data-items-tablet="[768,1]" data-items-mobile="[479,1]">
+                        <li>
+                            <div class="col-xs-2">
+                                <img src="~/Content/assets/img/team/team1.jpg" class="img-responsive" alt="">
+                            </div>
+                            <div class="col-xs-10 item-caption">
+                                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Sunt ut voluptatum eius sapiente. Lorem ipsum dolor sit amet, consectetur adipisicing elit. Sunt ut voluptatum eius sapiente. Lorem ipsum dolor sit amet, consectetur adipisicing elit. Sunt ut voluptatum eius sapiente. Lorem ipsum dolor sit amet, consectetur adipisicing elit. Sunt ut voluptatum eius sapiente</p>
+                                <span><strong>Edward Frankfurt</strong></span>
+                            </div>
+                        </li>
+                        <li>
+                            <div class="col-xs-2">
+                                <img src="~/Content/assets/img/team/team2.jpg" class="img-responsive" alt="">
+                            </div>
+                            <div class="col-xs-10 item-caption">
+                                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Sunt ut voluptatum eius sapiente. Lorem ipsum dolor sit amet, consectetur adipisicing elit. Sunt ut voluptatum eius sapiente. Lorem ipsum dolor sit amet, consectetur adipisicing elit. Sunt ut voluptatum eius sapiente. Lorem ipsum dolor sit amet, consectetur adipisicing elit. Sunt ut voluptatum eius sapiente</p>
+                                <span><strong>Charles Davies</strong></span>
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- News Section -->
+<section id="news-carousel-section">
+    <div class="section-inner">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-12 text-center wow fadeInDown">
+                    <h2 class="section-heading"><strong>News</strong> Carousel</h2>
+                    <h3 class="section-subheading text-muted">Lorem ipsum dolor sit amet consectetur.</h3>
+                </div>
+            </div>
+            <div class="row">
+                <ul class="direction-aware owl-carousel wow fadeInUp" data-items="3" data-items-tablet="[768,2]" data-items-mobile="[479,1]">
+                    <li class="portfolio-item da-item">
+                        <a href="#" title="View Image">
+                            <img src="~/Content/assets/img/blog/blog1.jpg" class="img-responsive" alt="">
+                            <div>
+                                <div class="portfolio-hover-content">
+                                    <i class="pe-7s-close fa-3x"></i>
+                                </div>
+                            </div>
+                        </a>
+                        <div class="item-caption">
+                            <h4>Dreams - What Do They Mean?</h4>
+                            <ul class="list-inline post-meta-list">
+                                <li><p class="text-muted"><i class="pe-7s-folder"></i> News</p></li>
+                                <li><p class="text-muted"><i class="pe-7s-clock"></i> <a href="#" title="">10/12/2014</a></p></li>
+                                <li><p class="text-muted"><i class="pe-7s-user"></i> <a href="#" title="">Richard Blake</a></p></li>
+                            </ul>
+                            <p class="post-excerpt">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Sunt ut voluptatum eius sapiente. Lorem ipsum dolor sit amet, consectetur adipisicing elit. Sunt ut voluptatum eius sapiente</p>
+                        </div>
+                    </li>
+                    <li class="portfolio-item da-item">
+                        <a href="#" title="View Image">
+                            <img src="~/Content/assets/img/blog/blog2.jpg" class="img-responsive" alt="">
+                            <div>
+                                <div class="portfolio-hover-content">
+                                    <i class="pe-7s-close fa-3x"></i>
+                                </div>
+                            </div>
+                        </a>
+                        <div class="item-caption">
+                            <h4>Dreams - What Do They Mean?</h4>
+                            <ul class="list-inline post-meta-list">
+                                <li><p class="text-muted"><i class="pe-7s-folder"></i> News</p></li>
+                                <li><p class="text-muted"><i class="pe-7s-clock"></i> <a href="#" title="">10/12/2014</a></p></li>
+                                <li><p class="text-muted"><i class="pe-7s-user"></i> <a href="#" title="">Richard Blake</a></p></li>
+                            </ul>
+                            <p class="post-excerpt">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Sunt ut voluptatum eius sapiente. Lorem ipsum dolor sit amet, consectetur adipisicing elit. Sunt ut voluptatum eius sapiente</p>
+                        </div>
+                    </li>
+                    <li class="portfolio-item da-item">
+                        <a href="#" title="View Image">
+                            <img src="~/Content/assets/img/blog/blog3.jpg" class="img-responsive" alt="">
+                            <div>
+                                <div class="portfolio-hover-content">
+                                    <i class="pe-7s-close fa-3x"></i>
+                                </div>
+                            </div>
+                        </a>
+                        <div class="item-caption">
+                            <h4>Dreams - What Do They Mean?</h4>
+                            <ul class="list-inline post-meta-list">
+                                <li><p class="text-muted"><i class="pe-7s-folder"></i> News</p></li>
+                                <li><p class="text-muted"><i class="pe-7s-clock"></i> <a href="#" title="">10/12/2014</a></p></li>
+                                <li><p class="text-muted"><i class="pe-7s-user"></i> <a href="#" title="">Richard Blake</a></p></li>
+                            </ul>
+                            <p class="post-excerpt">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Sunt ut voluptatum eius sapiente. Lorem ipsum dolor sit amet, consectetur adipisicing elit. Sunt ut voluptatum eius sapiente</p>
+                        </div>
+                    </li>
+                    <li class="portfolio-item da-item">
+                        <a href="#" title="View Image">
+                            <img src="~/Content/assets/img/blog/blog4.jpg" class="img-responsive" alt="">
+                            <div>
+                                <div class="portfolio-hover-content">
+                                    <i class="pe-7s-close fa-3x"></i>
+                                </div>
+                            </div>
+                        </a>
+                        <div class="item-caption">
+                            <h4>Dreams - What Do They Mean?</h4>
+                            <ul class="list-inline post-meta-list">
+                                <li><p class="text-muted"><i class="pe-7s-folder"></i> News</p></li>
+                                <li><p class="text-muted"><i class="pe-7s-clock"></i> <a href="#" title="">10/12/2014</a></p></li>
+                                <li><p class="text-muted"><i class="pe-7s-user"></i> <a href="#" title="">Richard Blake</a></p></li>
+                            </ul>
+                            <p class="post-excerpt">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Sunt ut voluptatum eius sapiente. Lorem ipsum dolor sit amet, consectetur adipisicing elit. Sunt ut voluptatum eius sapiente</p>
+                        </div>
+                    </li>
+                    <li class="portfolio-item da-item">
+                        <a href="#" title="View Image">
+                            <img src="~/Content/assets/img/blog/blog5.jpg" class="img-responsive" alt="">
+                            <div>
+                                <div class="portfolio-hover-content">
+                                    <i class="pe-7s-close fa-3x"></i>
+                                </div>
+                            </div>
+                        </a>
+                        <div class="item-caption">
+                            <h4>Dreams - What Do They Mean?</h4>
+                            <ul class="list-inline post-meta-list">
+                                <li><p class="text-muted"><i class="pe-7s-folder"></i> News</p></li>
+                                <li><p class="text-muted"><i class="pe-7s-clock"></i> <a href="#" title="">10/12/2014</a></p></li>
+                                <li><p class="text-muted"><i class="pe-7s-user"></i> <a href="#" title="">Richard Blake</a></p></li>
+                            </ul>
+                            <p class="post-excerpt">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Sunt ut voluptatum eius sapiente. Lorem ipsum dolor sit amet, consectetur adipisicing elit. Sunt ut voluptatum eius sapiente</p>
+                        </div>
+                    </li>
+                    <li class="portfolio-item da-item">
+                        <a href="#" title="View Image">
+                            <img src="~/Content/assets/img/blog/blog6.jpg" class="img-responsive" alt="">
+                            <div>
+                                <div class="portfolio-hover-content">
+                                    <i class="pe-7s-close fa-3x"></i>
+                                </div>
+                            </div>
+                        </a>
+                        <div class="item-caption">
+                            <h4>Dreams - What Do They Mean?</h4>
+                            <ul class="list-inline post-meta-list">
+                                <li><p class="text-muted"><i class="pe-7s-folder"></i> News</p></li>
+                                <li><p class="text-muted"><i class="pe-7s-clock"></i> <a href="#" title="">10/12/2014</a></p></li>
+                                <li><p class="text-muted"><i class="pe-7s-user"></i> <a href="#" title="">Richard Blake</a></p></li>
+                            </ul>
+                            <p class="post-excerpt">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Sunt ut voluptatum eius sapiente. Lorem ipsum dolor sit amet, consectetur adipisicing elit. Sunt ut voluptatum eius sapiente</p>
+                        </div>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section id="mapwrapper"></section>
+
+
+<section id="footer-widgets" class="divider-wrapper">
+    <div class="section-inner">
+        <div class="container">
+            <div class="row wow fadeInUp">
+                <div class="widget col-md-3 col-sm-6 about-us-widget">
+                    <h4 class="widget-title"><strong>Global</strong> Coverage</h4>
+                    <p>Was drawing natural fat respect husband. An as noisy an offer drawn blush place. These tried for way joy wrote witty. In mr began music weeks after at begin. Was drawing natural fat respect husband. An as noisy an offer drawn blush place. These tried for way joy wrote witty. Was drawing natural fat respect husband. An as noisy an offer drawn blush place. These tried for way joy wrote witty.</p>
+                </div><!--/.col-md-3-->
+
+                <div class="widget col-md-3 col-sm-6">
+                    <h4 class="widget-title"><strong>Our</strong> Company</h4>
+                    <div>
+                        <ul class="list-unstyled widget-list">
+                            <li><a href="#">Company Overview</a></li>
+                            <li><a href="#">Meet The Team</a></li>
+                            <li><a href="#">Our Awesome Partners</a></li>
+                            <li><a href="#">Our Services</a></li>
+                            <li><a href="#">Resources</a></li>
+                            <li><a href="#">Our Links</a></li>
+                            <li><a href="#">Communit</a></li>
+                        </ul>
+                    </div>
+                </div><!--/.col-md-3-->
+
+                <div class="widget col-md-3 col-sm-6">
+                    <h4 class="widget-title"><strong>Latest</strong> Articles</h4>
+                    <div>
+                        <div class="media">
+                            <div class="pull-left">
+                                <img class="widget-img" src="~/Content/assets/img/widget/widget1.jpg" alt="">
+                            </div>
+                            <div class="media-body">
+                                <span class="media-heading"><a href="#">Blog Post A</a></span>
+                                <small class="muted">Posted 14 April 2014</small>
+                            </div>
+                        </div>
+                        <div class="media">
+                            <div class="pull-left">
+                                <img class="widget-img" src="~/Content/assets/img/widget/widget2.jpg" alt="">
+                            </div>
+                            <div class="media-body">
+                                <span class="media-heading"><a href="#">Blog Post B</a></span>
+                                <small class="muted">Posted 14 April 2014</small>
+                            </div>
+                        </div>
+                        <div class="media">
+                            <div class="pull-left">
+                                <img class="widget-img" src="~/Content/assets/img/widget/widget2.jpg" alt="">
+                            </div>
+                            <div class="media-body">
+                                <span class="media-heading"><a href="#">Blog Post B</a></span>
+                                <small class="muted">Posted 14 April 2014</small>
+                            </div>
+                        </div>
+                    </div>
+                </div><!--/.col-md-3-->
+
+                <div class="widget carousel-widget col-md-3 col-sm-6">
+                    <h4 class="widget-title"><strong>Latest</strong> Works</h4>
+                    <div class="row">
+                        <ul class="direction-aware owl-carousel-paged wow fadeInUp" data-items="1" data-items-tablet="[768,1]" data-items-mobile="[479,1]">
+                            <li class="portfolio-item da-item">
+                                <a href="single-post.html" title="View Post">
+                                    <img src="http://unsplash.it/800/600?random=6" class="img-responsive" alt="">
+                                    <div>
+                                        <div class="portfolio-hover-content">
+                                            <i class="pe-7s-close fa-3x"></i>
+                                        </div>
+                                    </div>
+                                </a>
+                            </li>
+                            <li class="portfolio-item da-item">
+                                <a href="single-post.html" title="View Post">
+                                    <img src="http://unsplash.it/800/600?random=5" class="img-responsive" alt="">
+                                    <div>
+                                        <div class="portfolio-hover-content">
+                                            <i class="pe-7s-close fa-3x"></i>
+                                        </div>
+                                    </div>
+                                </a>
+                            </li>
+                            <li class="portfolio-item da-item">
+                                <a href="single-post.html" title="View Post">
+                                    <img src="http://unsplash.it/800/600?random=4" class="img-responsive" alt="">
+                                    <div>
+                                        <div class="portfolio-hover-content">
+                                            <i class="pe-7s-close fa-3x"></i>
+                                        </div>
+                                    </div>
+                                </a>
+                            </li>
+                            <li class="portfolio-item da-item">
+                                <a href="single-post.html" title="View Post">
+                                    <img src="http://unsplash.it/800/600?random=6" class="img-responsive" alt="">
+                                    <div>
+                                        <div class="portfolio-hover-content">
+                                            <i class="pe-7s-close fa-3x"></i>
+                                        </div>
+                                    </div>
+                                </a>
+                            </li>
+                            <li class="portfolio-item da-item">
+                                <a href="single-post.html" title="View Post">
+                                    <img src="http://unsplash.it/800/600?random=5" class="img-responsive" alt="">
+                                    <div>
+                                        <div class="portfolio-hover-content">
+                                            <i class="pe-7s-close fa-3x"></i>
+                                        </div>
+                                    </div>
+                                </a>
+                            </li>
+                            <li class="portfolio-item da-item">
+                                <a href="single-post.html" title="View Post">
+                                    <img src="http://unsplash.it/800/600?random=4" class="img-responsive" alt="">
+                                    <div>
+                                        <div class="portfolio-hover-content">
+                                            <i class="pe-7s-close fa-3x"></i>
+                                        </div>
+                                    </div>
+                                </a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>

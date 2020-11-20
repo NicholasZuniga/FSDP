@@ -1,0 +1,64 @@
+﻿@model IEnumerable<FSDP.DATA.EF.Vase>
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Index</h2>
+
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.VaseMaterial)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.VasePhoto)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.SpecialNotes)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.IsActive)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.DateAdded)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.OwnerDetail.FirstName)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.VaseMaterial)
+        </td>
+        <td>
+            @*@Html.DisplayFor(modelItem => item.VasePhoto)*@
+            <img src="~/Content/img/vaseimages/t_@item.VasePhoto" alt="Vase Image" title="@item.VaseMaterial" />
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.SpecialNotes)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.IsActive)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.DateAdded)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.OwnerDetail.FirstName)
+        </td>
+        <td>
+            @Html.ActionLink("Edit", "Edit", new { id=item.VaseID }) |
+            @Html.ActionLink("Details", "Details", new { id=item.VaseID }) |
+            @Html.ActionLink("Delete", "Delete", new { id=item.VaseID })
+        </td>
+    </tr>
+}
+
+</table>

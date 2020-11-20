@@ -1,0 +1,71 @@
+﻿@model FSDP.DATA.EF.Vase
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2>Details</h2>
+
+
+    <h4>Vase</h4>
+    <hr />
+
+    <div class="col-md-6">
+        <img src="~/Content/img/vaseimages/@Model.VasePhoto" alt="Vase Image" title="@Model.VaseMaterial" />
+    </div>
+    <div class="col-md-6">
+        <dl class="dl-horizontal">
+            <dt>
+                @Html.DisplayNameFor(model => model.VaseMaterial)
+            </dt>
+
+            <dd>
+                @Html.DisplayFor(model => model.VaseMaterial)
+            </dd>
+
+            @*<dt>
+                    @Html.DisplayNameFor(model => model.VasePhoto)
+                </dt>
+
+                <dd>
+                    @Html.DisplayFor(model => model.VasePhoto)
+                </dd>*@
+
+            <dt>
+                @Html.DisplayNameFor(model => model.SpecialNotes)
+            </dt>
+
+            <dd>
+                @Html.DisplayFor(model => model.SpecialNotes)
+            </dd>
+
+            <dt>
+                @Html.DisplayNameFor(model => model.IsActive)
+            </dt>
+
+            <dd>
+                @Html.DisplayFor(model => model.IsActive)
+            </dd>
+
+            <dt>
+                @Html.DisplayNameFor(model => model.DateAdded)
+            </dt>
+
+            <dd>
+                @Html.DisplayFor(model => model.DateAdded)
+            </dd>
+
+            <dt>
+                @Html.DisplayNameFor(model => model.OwnerDetail.FirstName)
+            </dt>
+
+            <dd>
+                @Html.DisplayFor(model => model.OwnerDetail.FirstName)
+            </dd>
+
+        </dl>
+    </div>
+    <p>
+        @Html.ActionLink("Edit", "Edit", new { id = Model.VaseID }) |
+        @Html.ActionLink("Back to List", "Index")
+    </p>

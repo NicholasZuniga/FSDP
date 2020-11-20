@@ -60,7 +60,7 @@ namespace FSDP.DATA.EF
         public int LocationId { get; set; }
 
         [Display(Name ="Reservation Date")]
-        [DisplayFormat(DataFormatString ="{0:d}, ApplyFormatInEditMode=true")]
+        [DisplayFormat(DataFormatString ="{0:d}")]
         [Required(ErrorMessage ="* Reservation date must be selected")]
         public System.DateTime ReservationDate { get; set; }
     }
@@ -130,7 +130,7 @@ namespace FSDP.DATA.EF
         public bool IsActive { get; set; }
 
         [Display(Name = "Date Registered")]
-        [DisplayFormat(DataFormatString = "{0:d}, ApplyFormatInEditMode=true")]
+        [DisplayFormat(DataFormatString = "{0:d}")]
         [Required(ErrorMessage = "* Date must be selected")]
         public System.DateTime DateAdded { get; set; }
     }
