@@ -100,7 +100,7 @@
                                 <li><a href="@Url.Action("Index", "Vases")">My Vase</a></li>
                                 <li><a href="index-coming-soon.html">Reserve Spot</a></li>
                             }
-                            <li><a href="@Url.Action("Contact","Home")">Contact</a></li>
+                            <li><a href="@Url.Action("Contact", "Contact")">Contact</a></li>
                             @if (Request.IsAuthenticated)
                             {
                                 using (Html.BeginForm("LogOff", "Account", FormMethod.Post, new { id = "logoutForm" }))

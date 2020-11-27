@@ -152,9 +152,9 @@ namespace FSDP.UI.MVC.Controllers
             {
                 var user = new ApplicationUser { UserName = model.Email, Email = model.Email };
                 var result = await UserManager.CreateAsync(user, model.Password);
-                UserManager.AddToRole(user.Id, "Client");
                 if (result.Succeeded)
                 {
+                    UserManager.AddToRole(user.Id, "Client");
                     #region Dealing with custom user details
                     OwnerDetail newUserdeets = new OwnerDetail();
                     newUserdeets.OwnerId = user.Id;

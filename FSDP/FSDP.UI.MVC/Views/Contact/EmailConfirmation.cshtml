@@ -1,0 +1,34 @@
+﻿@model FSDP.UI.MVC.Models.ContactViewModel
+
+@{
+    ViewBag.Title = "Email Confirmation";
+}
+
+<div id="Box1">
+    <table class="box1">
+        <tr>
+            <td>
+                <h2>@ViewBag.Title</h2>
+
+                <h3>Thank you @Model.Name</h3>
+
+                <p>
+                    Thank you for contacting me! I will respond as soon I am can. Details of your message are below
+                </p>
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <p class="text-success">
+                    Name: @Model.Name
+                    <br />
+                    Email: @Model.Email
+                    <br />
+                    Subject: @Model.Subject
+                    <br />
+                    Message: @Model.Message
+                </p>
+            </td>
+        </tr>
+    </table>
+</div>

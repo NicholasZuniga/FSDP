@@ -5,7 +5,6 @@ using System.Data.Entity;
 using System.Drawing;
 using System.Linq;
 using System.Net;
-using System.Security.Claims;
 using System.Web;
 using System.Web.Mvc;
 using FSDP.DATA.EF;
@@ -21,25 +20,16 @@ namespace FSDP.UI.MVC.Controllers
         // GET: Vases
         public ActionResult Index()
         {
+            
             if (User.IsInRole("Client"))
             {
-                string userid = GetUserId();
-                var vases = db.Vases.Where(v => v.OwnerId == userid);
-                return View(vases.ToList());
+                string currentUserID = User.Identity.GetUserId();
+                var clientvases = db.Vases.Where(v => v.OwnerId == currentUserID).Include(v => v.OwnerDetail);
+                return View(clientvases.ToList());
             }
-            else
-            {
-                var vases = db.Vases.Include(v => v.OwnerDetail);
-                return View(vases.ToList());
-            }
-        }
 
-        private string GetUserId()
-        {
-            var claimuser = (ClaimsPrincipal)User;
-            var useridclaim = claimuser.Claims.FirstOrDefault(c => c.Type == "http://schemas.xmlsoap.org/ws/2005/05/identity/claims/nameidentifier");
-            var userid = useridclaim.Value;
-            return userid;
+            var vases = db.Vases.Include(v => v.OwnerDetail);
+            return View(vases.ToList());
         }
 
         // GET: Vases/Details/5
@@ -60,8 +50,7 @@ namespace FSDP.UI.MVC.Controllers
         // GET: Vases/Create
         public ActionResult Create()
         {
-            var userId = GetUserId();
-            ViewBag.OwnerId = new SelectList(db.OwnerDetails, "OwnerId", "FirstName", userId);
+            ViewBag.OwnerId = new SelectList(db.OwnerDetails, "OwnerId", "FirstName");
             return View();
         }
 
@@ -103,6 +92,13 @@ namespace FSDP.UI.MVC.Controllers
                 vase.VasePhoto = file;
                 #endregion
 
+                if (User.IsInRole("Client"))
+                {
+                    string currentUserID = User.Identity.GetUserId();
+                    
+                    vase.OwnerId = currentUserID;
+                    vase.DateAdded = DateTime.Today;
+                }
                 db.Vases.Add(vase);
                 db.SaveChanges();
                 return RedirectToAction("Index");
@@ -124,8 +120,7 @@ namespace FSDP.UI.MVC.Controllers
             {
                 return HttpNotFound();
             }
-            var userId = GetUserId();
-            ViewBag.OwnerId = new SelectList(db.OwnerDetails, "OwnerId", "FirstName", userId);
+            ViewBag.OwnerId = new SelectList(db.OwnerDetails, "OwnerId", "FirstName", vase.OwnerId);
             return View(vase);
         }
 
@@ -135,12 +130,9 @@ namespace FSDP.UI.MVC.Controllers
         [HttpPost]
         [ValidateAntiForgeryToken]
         public ActionResult Edit([Bind(Include = "VaseID,VaseMaterial,OwnerId,VasePhoto,SpecialNotes,IsActive,DateAdded")] Vase vase, HttpPostedFileBase vaseImage)
-
         {
-            
             if (ModelState.IsValid)
             {
-                
                 #region File Upload
                 if (vaseImage != null)
                 {
@@ -174,12 +166,10 @@ namespace FSDP.UI.MVC.Controllers
                     vase.VasePhoto = file;
                 }
                 #endregion
-
                 db.Entry(vase).State = EntityState.Modified;
                 db.SaveChanges();
                 return RedirectToAction("Index");
             }
-
             ViewBag.OwnerId = new SelectList(db.OwnerDetails, "OwnerId", "FirstName", vase.OwnerId);
             return View(vase);
         }
@@ -206,7 +196,6 @@ namespace FSDP.UI.MVC.Controllers
         {
             Vase vase = db.Vases.Find(id);
 
-            //Delete the image file of the record that is being removed
             string path = Server.MapPath("~/Content/img/vaseimages/");
             ImageService.Delete(path, vase.VasePhoto);
 
