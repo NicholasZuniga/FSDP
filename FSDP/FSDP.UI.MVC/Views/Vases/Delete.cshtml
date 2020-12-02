@@ -4,70 +4,83 @@
     ViewBag.Title = "Delete";
 }
 
-<h2>Delete</h2>
+@if (User.IsInRole("Admin"))
+{
+    <h2>Delete</h2>
 
-<h3>Are you sure you want to delete this?</h3>
-<div>
-    <h4>Vase</h4>
-    <hr />
-    <dl class="dl-horizontal">
-        <dt>
-            @Html.DisplayNameFor(model => model.VaseMaterial)
-        </dt>
+    <h3>Are you sure you want to delete this?</h3>
+    <div>
+        <h4>Vase</h4>
+        <hr />
+        <dl class="dl-horizontal">
+            <dt>
+                @Html.DisplayNameFor(model => model.VaseMaterial)
+            </dt>
 
-        <dd>
-            @Html.DisplayFor(model => model.VaseMaterial)
-        </dd>
+            <dd>
+                @Html.DisplayFor(model => model.VaseMaterial)
+            </dd>
 
-        <dt>
-            @Html.DisplayNameFor(model => model.VasePhoto)
-        </dt>
+            <dt>
+                @Html.DisplayNameFor(model => model.VasePhoto)
+            </dt>
 
-        <dd>
-            @*@Html.DisplayFor(model => model.PhotoUrl)*@
-            <img src="~/Content/img/vaseimages/t_@Model.VasePhoto" alt="Vase Image" title="@Model.VaseMaterial" />
-        </dd>
+            <dd>
+                @*@Html.DisplayFor(model => model.PhotoUrl)*@
+                <img src="~/Content/img/vaseimages/t_@Model.VasePhoto" alt="Vase Image" title="@Model.VaseMaterial" />
+            </dd>
 
-        <dt>
-            @Html.DisplayNameFor(model => model.SpecialNotes)
-        </dt>
+            <dt>
+                @Html.DisplayNameFor(model => model.SpecialNotes)
+            </dt>
 
-        <dd>
-            @Html.DisplayFor(model => model.SpecialNotes)
-        </dd>
+            <dd>
+                @Html.DisplayFor(model => model.SpecialNotes)
+            </dd>
 
-        <dt>
-            @Html.DisplayNameFor(model => model.IsActive)
-        </dt>
+            <dt>
+                @Html.DisplayNameFor(model => model.IsActive)
+            </dt>
 
-        <dd>
-            @Html.DisplayFor(model => model.IsActive)
-        </dd>
+            <dd>
+                @Html.DisplayFor(model => model.IsActive)
+            </dd>
 
-        <dt>
-            @Html.DisplayNameFor(model => model.DateAdded)
-        </dt>
+            <dt>
+                @Html.DisplayNameFor(model => model.DateAdded)
+            </dt>
 
-        <dd>
-            @Html.DisplayFor(model => model.DateAdded)
-        </dd>
+            <dd>
+                @Html.DisplayFor(model => model.DateAdded)
+            </dd>
 
-        <dt>
-            @Html.DisplayNameFor(model => model.OwnerDetail.FirstName)
-        </dt>
+            <dt>
+                @Html.DisplayNameFor(model => model.OwnerDetail.FirstName)
+            </dt>
 
-        <dd>
-            @Html.DisplayFor(model => model.OwnerDetail.FirstName)
-        </dd>
+            <dd>
+                @Html.DisplayFor(model => model.OwnerDetail.FirstName)
+            </dd>
 
-    </dl>
+        </dl>
 
-    @using (Html.BeginForm()) {
-        @Html.AntiForgeryToken()
+        @using (Html.BeginForm())
+        {
+            @Html.AntiForgeryToken()
 
-        <div class="form-actions no-color">
-            <input type="submit" value="Delete" class="btn btn-default" /> |
-            @Html.ActionLink("Back to List", "Index")
-        </div>
-    }
-</div>
+            <div class="form-actions no-color">
+                <input type="submit" value="Delete" class="btn btn-default" /> |
+                @Html.ActionLink("Back to List", "Index")
+            </div>
+        }
+    </div>
+}
+else
+{
+    <h1>
+        Access Denied
+    </h1>
+    <p>
+        You do not have permission to view this page.
+    </p>
+}

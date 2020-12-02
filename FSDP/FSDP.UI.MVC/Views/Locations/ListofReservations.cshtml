@@ -1,0 +1,24 @@
+﻿@model IEnumerable<FSDP.DATA.EF.Location>
+@{
+    ViewBag.Title = "ListofReservations";
+}
+
+<h1 class="customedit">Select Location To View Reservations</h1>
+<table class="table">
+    <tr>
+
+        <th>
+            @Html.DisplayNameFor(model => model.LocationName)
+        </th>
+        <th></th>
+    </tr>
+
+    @foreach (var item in Model)
+    {
+        <tr>
+        <td>
+        @Html.ActionLink(Html.DisplayFor(model => item.LocationName).ToHtmlString(), "LocationsReservations", new { id = item.LocationId })
+        </td >
+        </tr >
+    }
+</table>

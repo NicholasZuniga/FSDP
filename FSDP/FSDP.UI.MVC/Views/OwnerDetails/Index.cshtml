@@ -4,6 +4,10 @@
     ViewBag.Title = "Index";
 }
 
+@if (User.IsInRole("Admin"))
+{
+
+
 <h2>Index</h2>
 
 <p>
@@ -20,7 +24,8 @@
         <th></th>
     </tr>
 
-@foreach (var item in Model) {
+@foreach (var item in Model)
+{
     <tr>
         <td>
             @Html.DisplayFor(modelItem => item.FirstName)
@@ -29,11 +34,21 @@
             @Html.DisplayFor(modelItem => item.LastName)
         </td>
         <td>
-            @Html.ActionLink("Edit", "Edit", new { id=item.OwnerId }) |
-            @Html.ActionLink("Details", "Details", new { id=item.OwnerId }) |
-            @Html.ActionLink("Delete", "Delete", new { id=item.OwnerId })
+            @Html.ActionLink("Edit", "Edit", new { id = item.OwnerId }) |
+            @Html.ActionLink("Details", "Details", new { id = item.OwnerId }) |
+            @Html.ActionLink("Delete", "Delete", new { id = item.OwnerId })
         </td>
     </tr>
 }
 
 </table>
+}
+else
+{
+    <h1>
+        Access Denied
+    </h1>
+    <p>
+        You do not have permission to view this page
+    </p>
+}

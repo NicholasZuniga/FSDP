@@ -14,6 +14,25 @@ namespace FSDP.UI.MVC.Controllers
     {
         private FSDPEntities db = new FSDPEntities();
 
+        public ActionResult LocationsReservations(int? id)
+        {
+            if (id == null)
+            {
+                return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
+            }
+            Location location = db.Locations.Find(id);
+            if (location == null)
+            {
+                return HttpNotFound();
+            }
+            return View(location);
+        }
+
+        public ActionResult ListofReservations()
+        {
+            return View(db.Locations.ToList());
+        }
+
         // GET: Locations
         public ActionResult Index()
         {

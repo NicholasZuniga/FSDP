@@ -131,7 +131,7 @@ h1,h2,h3,h4,h5,h6 {
 
 .form-control {
 	display: block;
-	width: 100%;
+	width: 80%;
 	height: 40px;
 	padding: 10px 15px;
 	font-size: 14px;
@@ -2423,4 +2423,47 @@ img.mfp-img {
 		margin: 0;
 		font-size: 16px;
 	}
+}
+
+/*CUSTOM CSS*/
+
+#Accountmanager{
+    padding-left:200px;
+    padding-top: 100px;
+}
+#mainfooter {
+    position: fixed;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+}
+#ContactPage{
+    padding-left:400px;
+}
+.formwidth{
+    width: 1000px;
+}
+
+.customtable{
+    padding-right:20px;
+    padding-left:20px;
+}
+.customedit{
+    
+    text-align: center;
+}
+.customedit2 {
+    text-align: center;
+    text-decoration:underline;
+        
+}
+.customdetails{
+    padding-left:150px;
+}
+.customlogin{
+    padding-left:400px;
+}
+#customemailconfirmation{
+padding-left: 500px;
+padding-top: 100px;
 }

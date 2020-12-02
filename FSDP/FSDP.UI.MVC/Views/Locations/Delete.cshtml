@@ -4,13 +4,13 @@
     ViewBag.Title = "Delete";
 }
 
-<h2>Delete</h2>
+<h2 class="customedit">Delete</h2>
 
-<h3>Are you sure you want to delete this?</h3>
+<h3 class="customedit">Are you sure you want to delete this?</h3>
 <div>
-    <h4>Location</h4>
+    <h4 class="customtable">Location</h4>
     <hr />
-    <dl class="dl-horizontal">
+    <dl class="dl-horizontal customtable">
         <dt>
             @Html.DisplayNameFor(model => model.LocationName)
         </dt>
@@ -64,7 +64,7 @@
     @using (Html.BeginForm()) {
         @Html.AntiForgeryToken()
 
-        <div class="form-actions no-color">
+        <div class="form-actions no-color customedit">
             <input type="submit" value="Delete" class="btn btn-default" /> |
             @Html.ActionLink("Back to List", "Index")
         </div>

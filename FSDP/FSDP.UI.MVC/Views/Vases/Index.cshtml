@@ -2,63 +2,116 @@
 
 @{
     ViewBag.Title = "Index";
+
+
 }
+<div class="customtable">
+    <h2>Vases</h2>
+    @if (!User.IsInRole("Employee"))
+    {
+        <p>
+            @Html.ActionLink("Create New Vase Profile", "Create")
+        </p>
+    }
 
-<h2>Index</h2>
+    <table class="table">
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.VaseMaterial)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.VasePhoto)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.SpecialNotes)
+            </th>
+            @if (!User.IsInRole("Client"))
+            {
+                <th>
+                    @Html.DisplayNameFor(model => model.IsActive)
+                </th>
+            }
+            <th>
+                @Html.DisplayNameFor(model => model.DateAdded)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.OwnerDetail.ClientName)
+            </th>
+            <th></th>
+        </tr>
 
-<p>
-    @Html.ActionLink("Create New", "Create")
-</p>
-<table class="table">
-    <tr>
-        <th>
-            @Html.DisplayNameFor(model => model.VaseMaterial)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.VasePhoto)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.SpecialNotes)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.IsActive)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.DateAdded)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.OwnerDetail.FirstName)
-        </th>
-        <th></th>
-    </tr>
+        @foreach (var item in Model)
+        {
+            if (User.IsInRole("Client") && item.IsActive == false)
+            {
+                <tr>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.VaseMaterial)
+                    </td>
+                    <td>
+                        @*@Html.DisplayFor(modelItem => item.VasePhoto)*@
+                        <img src="~/Content/img/vaseimages/t_@item.VasePhoto" alt="Vase Image" title="@item.VaseMaterial" />
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.SpecialNotes)
+                    </td>
+                    @if (!User.IsInRole("Client"))
+                    {
+                        <td>
+                            @Html.DisplayFor(modelItem => item.IsActive)
+                        </td>
+                    }
+                    <td>
+                        @Html.DisplayFor(modelItem => item.DateAdded)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.OwnerDetail.ClientName)
+                    </td>
+                    <td>
+                        @Html.ActionLink("Edit", "Edit", new { id = item.VaseID }) |
+                        @Html.ActionLink("Details", "Details", new { id = item.VaseID }) |
+                        @if (User.IsInRole("Admin"))
+                        {
+                            @Html.ActionLink("Delete", "Delete", new { id = item.VaseID })
+                        }
+                    </td>
+                </tr>
+            }
+            else
+            {
+                <tr>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.VaseMaterial)
+                    </td>
+                    <td>
+                        @*@Html.DisplayFor(modelItem => item.VasePhoto)*@
+                        <img src="~/Content/img/vaseimages/t_@item.VasePhoto" alt="Vase Image" title="@item.VaseMaterial" />
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.SpecialNotes)
+                    </td>
 
-@foreach (var item in Model) {
-    <tr>
-        <td>
-            @Html.DisplayFor(modelItem => item.VaseMaterial)
-        </td>
-        <td>
-            @*@Html.DisplayFor(modelItem => item.VasePhoto)*@
-            <img src="~/Content/img/vaseimages/t_@item.VasePhoto" alt="Vase Image" title="@item.VaseMaterial" />
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.SpecialNotes)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.IsActive)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.DateAdded)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.OwnerDetail.FirstName)
-        </td>
-        <td>
-            @Html.ActionLink("Edit", "Edit", new { id=item.VaseID }) |
-            @Html.ActionLink("Details", "Details", new { id=item.VaseID }) |
-            @Html.ActionLink("Delete", "Delete", new { id=item.VaseID })
-        </td>
-    </tr>
-}
+                    <td>
+                        @Html.DisplayFor(modelItem => item.IsActive)
+                    </td>
 
-</table>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.DateAdded)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.OwnerDetail.ClientName)
+                    </td>
+                    <td>
+                        @Html.ActionLink("Edit", "Edit", new { id = item.VaseID }) |
+                        @Html.ActionLink("Details", "Details", new { id = item.VaseID }) |
+                        @if (User.IsInRole("Admin"))
+                        {
+                            @Html.ActionLink("Delete", "Delete", new { id = item.VaseID })
+                        }
+                    </td>
+                </tr>
+            }
+        }
+
+    </table>
+</div>

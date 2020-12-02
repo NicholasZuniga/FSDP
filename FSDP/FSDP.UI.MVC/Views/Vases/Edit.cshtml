@@ -11,47 +11,61 @@
 {
     @Html.AntiForgeryToken()
 
+
     <div class="form-horizontal">
-        <h4>Vase</h4>
+        <h4>Vase Profile</h4>
         <hr />
         @Html.ValidationSummary(true, "", new { @class = "text-danger" })
         @Html.HiddenFor(model => model.VaseID)
+        @Html.HiddenFor(model => model.DateAdded)
+        @Html.HiddenFor(Model => Model.OwnerId)
+        
+            @Html.HiddenFor(Model => Model.VaseMaterial);
+            @Html.HiddenFor(Model => Model.VasePhoto);
+        
 
-        <div class="form-group">
-            @Html.LabelFor(model => model.VaseMaterial, htmlAttributes: new { @class = "control-label col-md-2" })
-            <div class="col-md-10">
-                @Html.EditorFor(model => model.VaseMaterial, new { htmlAttributes = new { @class = "form-control" } })
-                @Html.ValidationMessageFor(model => model.VaseMaterial, "", new { @class = "text-danger" })
+        @if (!User.IsInRole("Employee"))
+        {
+
+
+            <div class="form-group">
+                @Html.LabelFor(model => model.VaseMaterial, htmlAttributes: new { @class = "control-label col-md-2" })
+                <div class="col-md-10">
+                    @Html.EditorFor(model => model.VaseMaterial, new { htmlAttributes = new { @class = "form-control" } })
+                    @Html.ValidationMessageFor(model => model.VaseMaterial, "", new { @class = "text-danger" })
+                </div>
             </div>
-        </div>
+            if (User.IsInRole("Admin"))
+            {
+                <div class="form-group">
+                    @Html.LabelFor(model => model.OwnerId, "OwnerId", htmlAttributes: new { @class = "control-label col-md-2" })
+                    <div class="col-md-10">
+                        @Html.DropDownList("OwnerId", null, htmlAttributes: new { @class = "form-control" })
+                        @Html.ValidationMessageFor(model => model.OwnerId, "", new { @class = "text-danger" })
+                    </div>
+                </div>
+            }
 
-        <div class="form-group">
-            @Html.LabelFor(model => model.OwnerId, "OwnerId", htmlAttributes: new { @class = "control-label col-md-2" })
-            <div class="col-md-10">
-                @Html.DropDownList("OwnerId", null, htmlAttributes: new { @class = "form-control" })
-                @Html.ValidationMessageFor(model => model.OwnerId, "", new { @class = "text-danger" })
-            </div>
-        </div>
+            @*<div class="form-group">
+                    @Html.LabelFor(model => model.VasePhoto, htmlAttributes: new { @class = "control-label col-md-2" })
+                    <div class="col-md-10">
+                        @Html.EditorFor(model => model.VasePhoto, new { htmlAttributes = new { @class = "form-control" } })
+                        @Html.ValidationMessageFor(model => model.VasePhoto, "", new { @class = "text-danger" })
+                    </div>
+                </div>*@
 
-        @*<div class="form-group">
+            <div class="form-group">
                 @Html.LabelFor(model => model.VasePhoto, htmlAttributes: new { @class = "control-label col-md-2" })
                 <div class="col-md-10">
-                    @Html.EditorFor(model => model.VasePhoto, new { htmlAttributes = new { @class = "form-control" } })
+                    @*@Html.EditorFor(model => model.BookImage, new { htmlAttributes = new { @class = "form-control" } })*@
+                    <img src="~/Content/img/vaseimages/@Model.VasePhoto" style="max-width:100px;" />
+                    <hr />
+                    <input type="file" name="vaseImage" />
                     @Html.ValidationMessageFor(model => model.VasePhoto, "", new { @class = "text-danger" })
                 </div>
-            </div>*@
-
-        <div class="form-group">
-            @Html.LabelFor(model => model.VasePhoto, htmlAttributes: new { @class = "control-label col-md-2" })
-            <div class="col-md-10">
-                @*@Html.EditorFor(model => model.BookImage, new { htmlAttributes = new { @class = "form-control" } })*@
-                <img src="~/Content/img/vaseimages/@Model.VasePhoto" style="max-width:100px;" />
-                <hr />
-                <input type="file" name="vaseImage" />
-                @Html.ValidationMessageFor(model => model.VasePhoto, "", new { @class = "text-danger" })
             </div>
-        </div>
-
+        }
+        @* THIS BLOCK *@
         <div class="form-group">
             @Html.LabelFor(model => model.SpecialNotes, htmlAttributes: new { @class = "control-label col-md-2" })
             <div class="col-md-10">
@@ -59,24 +73,29 @@
                 @Html.ValidationMessageFor(model => model.SpecialNotes, "", new { @class = "text-danger" })
             </div>
         </div>
-
-        <div class="form-group">
-            @Html.LabelFor(model => model.IsActive, htmlAttributes: new { @class = "control-label col-md-2" })
-            <div class="col-md-10">
-                <div class="checkbox">
-                    @Html.EditorFor(model => model.IsActive)
-                    @Html.ValidationMessageFor(model => model.IsActive, "", new { @class = "text-danger" })
+        @if (!User.IsInRole("Client"))
+        {
+            <div class="form-group">
+                @Html.LabelFor(model => model.IsActive, htmlAttributes: new { @class = "control-label col-md-2" })
+                <div class="col-md-10">
+                    <div class="checkbox">
+                        @Html.EditorFor(model => model.IsActive)
+                        @Html.ValidationMessageFor(model => model.IsActive, "", new { @class = "text-danger" })
+                    </div>
                 </div>
             </div>
-        </div>
+        }
 
-        <div class="form-group">
-            @Html.LabelFor(model => model.DateAdded, htmlAttributes: new { @class = "control-label col-md-2" })
-            <div class="col-md-10">
-                @Html.EditorFor(model => model.DateAdded, new { htmlAttributes = new { @class = "form-control" } })
-                @Html.ValidationMessageFor(model => model.DateAdded, "", new { @class = "text-danger" })
+        @if (User.IsInRole("Admin"))
+        {
+            <div class="form-group">
+                @Html.LabelFor(model => model.DateAdded, htmlAttributes: new { @class = "control-label col-md-2" })
+                <div class="col-md-10">
+                    @Html.EditorFor(model => model.DateAdded, new { htmlAttributes = new { @class = "form-control" } })
+                    @Html.ValidationMessageFor(model => model.DateAdded, "", new { @class = "text-danger" })
+                </div>
             </div>
-        </div>
+        }
 
         <div class="form-group">
             <div class="col-md-offset-2 col-md-10">

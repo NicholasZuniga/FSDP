@@ -65,31 +65,41 @@
                     <span class="icon-bar"></span>
                     <span class="icon-bar"></span>
                 </button>
-                <a class="navbar-brand" href="index.html">Smash</a>
+                <a class="navbar-brand" href="@Url.Action("Index","Home")">Vicks Vase Cleaners</a>
             </div>
 
             <!-- Collect the nav links, forms, and other content for toggling -->
+
+
+
             <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
                 <ul class="nav navbar-nav navbar-right">
-                    <li class="dropdown">
-                        <a href="#" class="dropdown-toggle" data-hover="dropdown" data-toggle="dropdown">Employee Menu<span class="caret"></span></a>
-                        <ul class="dropdown-menu" role="menu">
-                            <li><a href="@Url.Action("Index","Reservations")">Reservations</a></li>
-                            <li><a href="@Url.Action("Index","Locations")">Locations</a></li>
-                            <li><a href="@Url.Action("Index","Vases")">Vases</a></li>
-                        </ul>
-                    </li>
-                    <li class="dropdown">
-                        <a href="#" class="dropdown-toggle" data-hover="dropdown" data-toggle="dropdown">Admin Menu<span class="caret"></span></a>
-                        <ul class="dropdown-menu" role="menu">
-                            <li><a href="@Url.Action("Index","UsersAdmin")">Users</a></li>
-                            <li><a href="@Url.Action("Index","RolesAdmin")">User Roles</a></li>
-                            <li><a href="@Url.Action("Index","Locations")">Locations</a></li>
-                            <li><a href="@Url.Action("Index","Reservations")">Reservations</a></li>
-                            <li><a href="@Url.Action("Index","Vases")">Vases</a></li>
-                            <li><a href="@Url.Action("Index","OwnerDetails")">Owners</a></li>
-                        </ul>
-                    </li>
+                    @if (User.IsInRole("Employee"))
+                    {
+                        <li class="dropdown">
+                            <a href="#" class="dropdown-toggle" data-hover="dropdown" data-toggle="dropdown">Employee Menu<span class="caret"></span></a>
+                            <ul class="dropdown-menu" role="menu">
+                                <li><a href="@Url.Action("ListofReservations","Locations")">Reservations</a></li>
+                                <li><a href="@Url.Action("Index","Locations")">Locations</a></li>
+                                <li><a href="@Url.Action("Index","Vases")">Vases</a></li>
+                            </ul>
+                        </li>
+                    }
+                    @if (User.IsInRole("Admin"))
+                    {
+                        <li class="dropdown">
+                            <a href="#" class="dropdown-toggle" data-hover="dropdown" data-toggle="dropdown">Admin Menu<span class="caret"></span></a>
+                            <ul class="dropdown-menu" role="menu">
+                                <li><a href="@Url.Action("Index","UsersAdmin")">Users</a></li>
+                                <li><a href="@Url.Action("Index","RolesAdmin")">User Roles</a></li>
+                                <li><a href="@Url.Action("Index","Locations")">Locations</a></li>
+                                <li><a href="@Url.Action("ListofReservations","Locations")">Reservation By Location</a></li>
+                                <li><a href="@Url.Action("Index","Reservations")">Reservations</a></li>
+                                <li><a href="@Url.Action("Index","Vases")">Vases</a></li>
+                                <li><a href="@Url.Action("Index","OwnerDetails")">Owners</a></li>
+                            </ul>
+                        </li>
+                    }
                     <li class="dropdown">
                         <a href="#" class="dropdown-toggle" data-hover="dropdown" data-toggle="dropdown">Menu <span class="caret"></span></a>
                         <ul class="dropdown-menu" role="menu">
@@ -98,8 +108,9 @@
                             {
                                 <li><a href="@Url.Action("Index", "Manage")">Account</a></li>
                                 <li><a href="@Url.Action("Index", "Vases")">My Vase</a></li>
-                                <li><a href="index-coming-soon.html">Reserve Spot</a></li>
+                                <li><a href="@Url.Action("Index","Reservations")">Reserve Spot</a></li>
                             }
+                            <li><a href="@Url.Action("Index","Locations")">Locations</a></li>
                             <li><a href="@Url.Action("Contact", "Contact")">Contact</a></li>
                             @if (Request.IsAuthenticated)
                             {
@@ -112,8 +123,12 @@
                             else
                             {
                                 <li><a href="@Url.Action("Login", "Account")">Log In</a></li>
+                            }
+                            @if (!User.IsInRole("Client"))
+                            {
                                 <li><a href="@Url.Action("Register","Account")">Register</a></li>
                             }
+
 
                         </ul>
                     </li>
@@ -134,7 +149,7 @@
 
     @RenderBody()
 
-    <footer class="divider-wrapper-dark">
+    <footer id="mainfooter" class="divider-wrapper-dark">
         <div class="container">
             <div class="row">
                 <div class="col-md-4">
@@ -144,20 +159,7 @@
                     <a href="#" id="back-to-top"><i class="pe-7s-angle-up fa-4x"></i></a>
                 </div>
                 <div class="col-md-4">
-                    <ul class="list-inline social-buttons wow fadeInUp">
-                        <li>
-                            <a class="twitter" href="#"><i class="fa fa-twitter"></i></a>
-                        </li>
-                        <li>
-                            <a class="facebook" href="#"><i class="fa fa-facebook"></i></a>
-                        </li>
-                        <li>
-                            <a class="google" href="#"><i class="fa fa-google-plus"></i></a>
-                        </li>
-                        <li>
-                            <a class="linkedin" href="#"><i class="fa fa-linkedin"></i></a>
-                        </li>
-                    </ul>
+
                 </div>
             </div>
         </div>

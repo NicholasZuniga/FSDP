@@ -3,32 +3,43 @@
 @{
     ViewBag.Title = "Details";
 }
+@if (User.IsInRole("Admin"))
+{
+    <h2>Details</h2>
 
-<h2>Details</h2>
+    <div>
+        <h4>OwnerDetail</h4>
+        <hr />
+        <dl class="dl-horizontal">
+            <dt>
+                @Html.DisplayNameFor(model => model.FirstName)
+            </dt>
 
-<div>
-    <h4>OwnerDetail</h4>
-    <hr />
-    <dl class="dl-horizontal">
-        <dt>
-            @Html.DisplayNameFor(model => model.FirstName)
-        </dt>
+            <dd>
+                @Html.DisplayFor(model => model.FirstName)
+            </dd>
 
-        <dd>
-            @Html.DisplayFor(model => model.FirstName)
-        </dd>
+            <dt>
+                @Html.DisplayNameFor(model => model.LastName)
+            </dt>
 
-        <dt>
-            @Html.DisplayNameFor(model => model.LastName)
-        </dt>
+            <dd>
+                @Html.DisplayFor(model => model.LastName)
+            </dd>
 
-        <dd>
-            @Html.DisplayFor(model => model.LastName)
-        </dd>
-
-    </dl>
-</div>
-<p>
-    @Html.ActionLink("Edit", "Edit", new { id = Model.OwnerId }) |
-    @Html.ActionLink("Back to List", "Index")
-</p>
+        </dl>
+    </div>
+    <p>
+        @Html.ActionLink("Edit", "Edit", new { id = Model.OwnerId }) |
+        @Html.ActionLink("Back to List", "Index")
+    </p>
+}
+else
+{
+    <h1>
+        Access Denied
+    </h1>
+    <p>
+        You do not have permission to view this page.
+    </p>
+}

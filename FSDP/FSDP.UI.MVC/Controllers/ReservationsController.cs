@@ -7,6 +7,8 @@ using System.Net;
 using System.Web;
 using System.Web.Mvc;
 using FSDP.DATA.EF;
+using Microsoft.AspNet.Identity;
+//using FSDP.UI.MVC.Models;
 
 namespace FSDP.UI.MVC.Controllers
 {
@@ -17,8 +19,17 @@ namespace FSDP.UI.MVC.Controllers
         // GET: Reservations
         public ActionResult Index()
         {
-            var reservations = db.Reservations.Include(r => r.Location).Include(r => r.Vase);
-            return View(reservations.ToList());
+            if (User.IsInRole("Client"))
+            {
+                string currentUserID = User.Identity.GetUserId();
+                var reservations = db.Reservations.Where(r => r.Vase.OwnerId == currentUserID).Include(r => r.Location).Include(r => r.Vase);
+                return View(reservations.ToList());
+            }
+            else
+            {
+                var reservations = db.Reservations.Include(r => r.Location);
+                return View(reservations.ToList());
+            }
         }
 
         // GET: Reservations/Details/5
@@ -39,27 +50,67 @@ namespace FSDP.UI.MVC.Controllers
         // GET: Reservations/Create
         public ActionResult Create()
         {
-            ViewBag.LocationId = new SelectList(db.Locations, "LocationId", "LocationName");
-            ViewBag.VaseID = new SelectList(db.Vases, "VaseID", "VaseMaterial");
-            return View();
+            if (!User.IsInRole("Admin"))
+            {
+                string currentUserID = User.Identity.GetUserId();
+                ViewBag.LocationId = new SelectList(db.Locations, "LocationId", "LocationName");
+                ViewBag.VaseID = new SelectList(db.Vases.Where(v => v.OwnerId == currentUserID), "VaseID", "VaseMaterial");
+
+                return View();
+            }
+            else
+            {
+                ViewBag.VaseID = new SelectList((db.Vases), "VaseID", "VaseMaterial");
+                ViewBag.LocationId = new SelectList(db.Locations, "LocationId", "LocationName");
+                return View();
+            }
         }
 
         // POST: Reservations/Create
         // To protect from overposting attacks, please enable the specific properties you want to bind to, for 
         // more details see https://go.microsoft.com/fwlink/?LinkId=317598.
+
+
         [HttpPost]
         [ValidateAntiForgeryToken]
         public ActionResult Create([Bind(Include = "ReservationId,VaseID,LocationId,ReservationDate")] Reservation reservation)
         {
             if (ModelState.IsValid)
             {
-                db.Reservations.Add(reservation);
-                db.SaveChanges();
-                return RedirectToAction("Index");
+                if (!User.IsInRole("Admin"))
+                {
+                    byte? limit = 0;
+
+                    var theRecord = db.Locations.FirstOrDefault(r => r.LocationId == reservation.LocationId);
+
+                    limit = theRecord?.ReservationLimit;
+
+                    var records = db.Reservations.Where(r => r.LocationId == reservation.LocationId && r.ReservationDate == reservation.ReservationDate).ToList().Count;
+
+                    if (records >= limit)
+                    {
+                        ModelState.AddModelError("ReservationDate", "This date is not availble for this location");
+                        ViewBag.LocationId = new SelectList(db.Locations, "LocationId", "LocationName");
+                        ViewBag.VaseID = new SelectList(db.Vases, "VaseID", "VaseMaterial");
+                        return View();
+                    }
+                    db.Reservations.Add(reservation);
+                    db.SaveChanges();
+                    return RedirectToAction("Index");
+                }
+                else
+                {
+
+                    db.Reservations.Add(reservation);
+                    db.SaveChanges();
+                    return RedirectToAction("Index");
+                }
+
             }
 
             ViewBag.LocationId = new SelectList(db.Locations, "LocationId", "LocationName", reservation.LocationId);
             ViewBag.VaseID = new SelectList(db.Vases, "VaseID", "VaseMaterial", reservation.VaseID);
+
             return View(reservation);
         }
 

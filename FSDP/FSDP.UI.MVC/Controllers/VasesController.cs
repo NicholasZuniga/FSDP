@@ -163,6 +163,8 @@ namespace FSDP.UI.MVC.Controllers
                             }
                         }
                     }
+                    //string currentUserID = User.Identity.GetUserId();
+                    //vase.OwnerId = currentUserID;
                     vase.VasePhoto = file;
                 }
                 #endregion

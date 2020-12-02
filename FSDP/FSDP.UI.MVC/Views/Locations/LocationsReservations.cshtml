@@ -1,0 +1,70 @@
+﻿@model FSDP.DATA.EF.Location
+
+@{
+    /**/
+
+    ViewBag.Title = "Reservation List";
+}
+
+<h2 class="customedit">List of Reservations</h2>
+
+@if (!User.IsInRole("Client"))
+{
+
+    <div>
+        <p class="customedit2">Today's Reservations</p>
+        <table class="table">
+            <tr>
+                <th>
+                    Date
+                </th>
+                <th>
+                    Owner
+                </th>
+            </tr>
+            @foreach (var item in Model.Reservations)
+            {
+                if (item.ReservationDate == DateTime.Today)
+                {
+                    <tr>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.ReservationDate)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.Vase.OwnerDetail.ClientName)
+                        </td>
+                    </tr>
+                }
+            }
+        </table>
+    </div>
+    @Html.ActionLink("Back to List", "ListofReservations")
+    <div>
+        <p class="customedit2">Future Reservations</p>
+        <table class="table">
+            <tr>
+                <th>
+                    Date
+                </th>
+                <th>
+                    Owner
+                </th>
+            </tr>
+            @foreach (var item in Model.Reservations)
+            {
+                if (item.ReservationDate > DateTime.Today)
+                {
+                    <tr>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.ReservationDate)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.Vase.OwnerDetail.ClientName)
+                        </td>
+                    </tr>
+                }
+            }
+        </table>
+    </div>
+    @Html.ActionLink("Back to List", "ListofReservations")
+}

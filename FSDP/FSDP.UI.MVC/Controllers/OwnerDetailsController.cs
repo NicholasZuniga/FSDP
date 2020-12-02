@@ -10,6 +10,7 @@ using FSDP.DATA.EF;
 
 namespace FSDP.UI.MVC.Controllers
 {
+    [Authorize(Roles = "Admin")]
     public class OwnerDetailsController : Controller
     {
         private FSDPEntities db = new FSDPEntities();

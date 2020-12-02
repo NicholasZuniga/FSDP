@@ -94,7 +94,7 @@ namespace FSDP.DATA.EF
     [MetadataType(typeof(OwnerDetailMetadata))]
     public partial class OwnerDetail
     {
-        [Display(Name ="Client Name")]
+        [Display(Name ="Owner")]
         public string ClientName
         {
             get { return FirstName + " " + LastName; }
